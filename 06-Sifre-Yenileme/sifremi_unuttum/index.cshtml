@@ -1,0 +1,55 @@
+@{
+    Layout = "_Null";
+    ViewBag.Title = "Şifremi Unuttum";
+}
+
+@{
+    Layout = "_Null";
+    ViewBag.Title = "Giriş";
+}
+@using rentid.ViewModels
+@model sifremi_unuttumVM
+
+<div id="sifremi-unuttum" >
+
+    <div class="col-lg-6 float-left h-100">
+        <div class="col-10 offset-1 mt-5">
+            <a href="/">
+                <img class="logo" src="/assets/img/logo.png">
+            </a>
+            <div class="col-10 offset-1 mt-5">
+                <h3>Şifremi Unuttum</h3>
+                <small>Şifrenizi yeniden belirleyebilmeniz için E-posta adresinize ihtiyacımız var.</small>
+                <form name="sifremi_unuttum-form" class="form-group" asp-controller="sifremi_unuttum" asp-action="index" method="POST">
+                    <!--email-->
+                    <div class="form-row mt-4">
+                        <div class="col">
+                            <input asp-for="@Model.email" type="email" class="form-control form-control-sm" placeholder="E-posta adresiniz">
+                        </div>
+                    </div>
+                    <!--email tekrar-->
+                    <div class="form-row mt-3">
+                        <div class="col">
+                            <input asp-for="@Model.emailTekrar" type="email" class="form-control form-control-sm" placeholder="E-posta Tekrar">
+                        </div>
+                    </div>
+                    <!--Summary-->
+                    <div class="form-row mt-3" id="summary" asp-validation-summary="All">
+                        
+                    </div>
+                    
+                    <!--Button-->
+                    <div class="form-row mt-3">
+                        <div class="col">
+                            <button class="btn btn-secondary w-100" type="submit">Şifremi Unuttum</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6 float-left bg-img h-100">
+        
+    </div>
+</div>
